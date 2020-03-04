@@ -2,7 +2,7 @@ export default {
     template: `
     <footer>
     <p class="copy">
-      &copy; 2020 Roku Streaming Services Corp.
+      &copy; 2020 Roku Streaming Services
     </p>
 
     <ul class="float-right">
