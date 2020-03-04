@@ -67,18 +67,6 @@ nav:not(.side-nav) ul {
   text-align: center;
   font-size: 2rem; }
 
-.user-message {
-  margin: 0.25em 0 1em; }
-
-.card {
-  cursor: pointer;
-  color: white;
-  background: #6C3C97;
-  border: 4px solid #522d73;
-  margin-bottom: 1em; }
-  .card .card-body p {
-    margin: 10px 0 0; }
-
 .fs-video {
   width: 100%; }
 
@@ -208,7 +196,7 @@ footer {
   background: #662d91;
   background: linear-gradient(151deg, #662d91 45%, #331949 100%);
   background-size: cover;
-  padding-top: 10%; }
+  padding-top: 5%; }
 
 .login-logo {
   width: 50%;
@@ -278,5 +266,33 @@ footer {
       color: #6C3C97; }
     .media-type li:last-of-type {
       border-bottom: none; } }
+#kids-card {
+  background-color: seashell !important;
+  color: black; }
+
+.card-deck .card {
+  background: seashell !important;
+  color: black; }
+
+#adult-prof {
+  background-color: seashell !important;
+  color: black; }
+
+.nav-back i {
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 5px; }
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg); }
+
+.nav-back {
+  background-color: #2a2a2a; }
+
+.nav-back span {
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */
