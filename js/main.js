@@ -1,6 +1,7 @@
 // import the login component first (actually all components here, but we're starting with login)
 import LoginComponent from "./components/LoginComponent.js"
 import UsersComponent from "./components/UsersComponent.js"
+import DashboardComponent from "./components/DashboardComponent.js"
 
 (() => {
   let router = new VueRouter({
@@ -8,7 +9,8 @@ import UsersComponent from "./components/UsersComponent.js"
     routes: [
       { path: '/', redirect: { name: "login" } },
       { path: '/login', name: "login", component: LoginComponent },
-      { path: '/users', name: "users", component: UsersComponent }
+      { path: '/users', name: "users", component: UsersComponent },
+      { path: '/dashboard', name: "dashboard", component: DashboardComponent }
 
     ]
   });

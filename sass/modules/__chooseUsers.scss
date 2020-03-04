@@ -1,0 +1,39 @@
+#kids-card {
+    background-color: seashell !important;
+    color: black;
+}
+
+.card-deck .card {
+    background: seashell !important;
+    color: black;
+}
+
+
+#adult-prof {
+    background-color: seashell !important;
+    color: black;
+}
+
+
+
+.nav-back i {
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+.nav-back {
+    background-color: #2a2a2a;
+}
+
+.nav-back span {
+    color: white;
+}
+
