@@ -1,6 +1,23 @@
+.fa-chevron-circle-left {
+    color: white;
+    font-size: 32px;
+}
+
 #kids-card {
     background-color: seashell !important;
     color: black;
+    cursor: pointer;
+
+}
+
+#kids-card a {
+    color: black;
+    text-decoration: none;
+}
+
+#kids-card a:hover {
+    color: purple;
+    text-decoration: none;
 }
 
 .card-deck .card {
@@ -9,11 +26,21 @@
 }
 
 
-#adult-prof {
+#adults-card {
     background-color: seashell !important;
     color: black;
+    cursor: pointer;
 }
 
+#adults-card a:hover {
+    color: purple;
+    text-decoration: none;
+}
+
+#adults-card a {
+    color: black;
+    text-decoration: none;
+}
 
 
 .nav-back i {
@@ -37,3 +64,14 @@
     color: white;
 }
 
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.1); 
+    -webkit-box-shadow: 2px 7px 25px -4px rgb(37, 6, 61);
+    -moz-box-shadow: 2px 7px 25px -4px rgb(37, 6, 61);
+    box-shadow: 2px 7px 25px -4px rgb(37, 6, 61);
+
+}
