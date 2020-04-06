@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 06, 2020 at 11:00 PM
+-- Generation Time: Apr 06, 2020 at 11:25 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -60,6 +60,28 @@ CREATE TABLE `tbl_comments` (
   `comments_copy` text NOT NULL,
   `comments_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_decade`
+--
+
+CREATE TABLE `tbl_decade` (
+  `decade_id` int(11) NOT NULL,
+  `decade` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_decade`
+--
+
+INSERT INTO `tbl_decade` (`decade_id`, `decade`) VALUES
+(1, '50s'),
+(2, '60s'),
+(3, '70s'),
+(4, '80s'),
+(5, '90s');
 
 -- --------------------------------------------------------
 
@@ -132,6 +154,39 @@ INSERT INTO `tbl_movies` (`movies_id`, `movies_cover`, `movies_title`, `movies_r
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_mov_decade`
+--
+
+CREATE TABLE `tbl_mov_decade` (
+  `mov_decade_id` int(11) NOT NULL,
+  `movies_id` int(11) NOT NULL,
+  `decade_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_mov_decade`
+--
+
+INSERT INTO `tbl_mov_decade` (`mov_decade_id`, `movies_id`, `decade_id`) VALUES
+(1, 1, 2),
+(2, 2, 1),
+(3, 3, 5),
+(4, 4, 1),
+(5, 5, 5),
+(6, 6, 4),
+(7, 7, 1),
+(8, 8, 3),
+(9, 9, 1),
+(10, 10, 4),
+(11, 11, 4),
+(12, 12, 4),
+(13, 13, 4),
+(14, 14, 4),
+(15, 15, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_mov_genre`
 --
 
@@ -196,6 +251,34 @@ INSERT INTO `tbl_shows` (`tv_id`, `tv_cover`, `tv_title`, `tv_rating`, `tv_year`
 (10, 'inspectorgadget.jpg', 'Inspector Gadget', 'TV-PG', '1983', '2 seasons', 'Inspector Gadgets, now takes route to solve the mystery rooting in America.\r\n', 'inspectorgadget.mp4', 'October 24, 1983', 0),
 (11, 'rugrats.jpeg', 'Rugrats', 'TV-Y', '1991', '9 seasons', '`Rugrats\' reveals the world from a baby\'s point of view. Everything looks bigger, more mysterious and uncontrollable. Angelica, the oldest, likes to terrorise her cousin, Tommy, and his friends, and is famous for screaming, \"You stupid babies!\" The adults in the series are often clueless.\r\n', 'rugrats.mp4', 'August 11, 1991', 0),
 (12, ' heyarnold.jpg', 'Hey Arnold!', 'TV-Y7', ' 1996', '5 seasons', 'The adventures of Arnold, a grade-schooler who lives with his grandparents Phil and Gertrude.\r\n', 'heyarnold.mp4', 'October 7, 1996', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_shows_decade`
+--
+
+CREATE TABLE `tbl_shows_decade` (
+  `shows_decade` int(11) NOT NULL,
+  `shows_id` int(11) NOT NULL,
+  `decade_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_shows_decade`
+--
+
+INSERT INTO `tbl_shows_decade` (`shows_decade`, `shows_id`, `decade_id`) VALUES
+(1, 1, 4),
+(2, 2, 4),
+(3, 3, 3),
+(4, 6, 4),
+(5, 7, 4),
+(6, 8, 4),
+(7, 9, 4),
+(8, 10, 4),
+(9, 11, 5),
+(10, 12, 5);
 
 -- --------------------------------------------------------
 
@@ -310,6 +393,12 @@ ALTER TABLE `tbl_comments`
   ADD PRIMARY KEY (`comments_id`);
 
 --
+-- Indexes for table `tbl_decade`
+--
+ALTER TABLE `tbl_decade`
+  ADD PRIMARY KEY (`decade_id`);
+
+--
 -- Indexes for table `tbl_genre`
 --
 ALTER TABLE `tbl_genre`
@@ -322,6 +411,12 @@ ALTER TABLE `tbl_movies`
   ADD PRIMARY KEY (`movies_id`);
 
 --
+-- Indexes for table `tbl_mov_decade`
+--
+ALTER TABLE `tbl_mov_decade`
+  ADD PRIMARY KEY (`mov_decade_id`);
+
+--
 -- Indexes for table `tbl_mov_genre`
 --
 ALTER TABLE `tbl_mov_genre`
@@ -332,6 +427,12 @@ ALTER TABLE `tbl_mov_genre`
 --
 ALTER TABLE `tbl_shows`
   ADD PRIMARY KEY (`tv_id`);
+
+--
+-- Indexes for table `tbl_shows_decade`
+--
+ALTER TABLE `tbl_shows_decade`
+  ADD PRIMARY KEY (`shows_decade`);
 
 --
 -- Indexes for table `tbl_shows_genre`
@@ -374,6 +475,12 @@ ALTER TABLE `tbl_comments`
   MODIFY `comments_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbl_decade`
+--
+ALTER TABLE `tbl_decade`
+  MODIFY `decade_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `tbl_genre`
 --
 ALTER TABLE `tbl_genre`
@@ -386,6 +493,12 @@ ALTER TABLE `tbl_movies`
   MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `tbl_mov_decade`
+--
+ALTER TABLE `tbl_mov_decade`
+  MODIFY `mov_decade_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `tbl_mov_genre`
 --
 ALTER TABLE `tbl_mov_genre`
@@ -396,6 +509,12 @@ ALTER TABLE `tbl_mov_genre`
 --
 ALTER TABLE `tbl_shows`
   MODIFY `tv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tbl_shows_decade`
+--
+ALTER TABLE `tbl_shows_decade`
+  MODIFY `shows_decade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_shows_genre`
