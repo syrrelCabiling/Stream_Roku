@@ -30,6 +30,7 @@ import Navigation from "./components/Navigation.js";
       authenticated: false,
       administrator: false,
       user: [],
+      movies: []
 
       //currentUser: {},
     },

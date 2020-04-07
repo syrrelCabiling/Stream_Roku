@@ -18,6 +18,8 @@ function getAllMovies(){
             $movies_display['id'] = $Allmovies['movies_id'];
             $movies_display['movies_cover'] = $Allmovies['movies_cover'];
             $movies_display['movies_title'] = $Allmovies['movies_title'];
+            $movies_display['movies_trailer'] = $Allmovies['movies_trailer'];
+
             $movies_display['isadmin'] = $Allmovies['isadmin'];
 
            $Allmovies[] = $movies_display;
