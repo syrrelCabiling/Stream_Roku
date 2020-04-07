@@ -1,9 +1,9 @@
 export default {
-    template: `
-    <section>
-    <div class="container-fluid">
-    <div class="row">
-    <header class="col-sm-12 fixed-top roku-logo  pt-3 pb-3">
+  template: `
+  <section>
+  <div class="container-fluid">
+  <div class="row">
+  <header class="col-sm-12 fixed-top roku-logo  pt-3 pb-3">
     <img src="./images/white-lg.png" alt="Roku logo">
     <div id="sidebar">
       <div class="burger-toggle" onclick="toggleSidebar()">
@@ -30,10 +30,8 @@ export default {
   </header>
     </div>
   </div> <!-- end container fluid -->
-  
-  
-
-    `,
+  </section>
+  `,
     data() {
       return {
           input: {
@@ -43,4 +41,4 @@ export default {
 
       }
   }
-}
+} 
