@@ -1,5 +1,4 @@
 import LoginComponent from "./LoginComponent.js";
-import UserComponent from "./UserComponent.js";
 import Navigation from "./Navigation.js";
 
 export default {
