@@ -60,11 +60,11 @@ function getAllUsers(){
             $currentuser = array();
 
             $currentuser['id'] = $user['user_id'];
-            $currentuser['uname'] = $user['user_name'];
-            $currentuser['fname'] = $user['user_fname'];
-            $currentuser['admin'] = $user['user_admin'];
-            $currentuser['avatar'] = $user['user_avatar'];
-            $currentuser['permission'] = $user['user_permissions'];
+            $currentuser['user_name'] = $user['user_name'];
+            $currentuser['user_fname'] = $user['user_fname'];
+            $currentuser['user_admin'] = $user['user_admin'];
+            $currentuser['user_avatar'] = $user['user_avatar'];
+            $currentuser['user_permissions'] = $user['user_permissions'];
 
            $users[] = $currentuser;
     
@@ -126,3 +126,4 @@ function deleteUser($id){
         return false;
     }
 }
+

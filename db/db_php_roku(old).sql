@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 06, 2020 at 11:25 PM
+-- Generation Time: Apr 07, 2020 at 01:48 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_rokuMovies`
+-- Database: `db_php_roku`
 --
 
 -- --------------------------------------------------------
@@ -364,17 +364,21 @@ CREATE TABLE `tbl_user` (
   `user_email` varchar(250) NOT NULL,
   `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
-  `edited` tinyint(1) DEFAULT NULL,
-  `isadmin` tinyint(5) NOT NULL
+  `user_avatar` varchar(20) NOT NULL,
+  `user_permissions` int(11) NOT NULL,
+  `user_admin` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `edited`, `isadmin`) VALUES
-(1, 'mom', 'mom', '123', 'mom@you.com', '2020-02-03 19:26:54', 'no', 0, 1),
-(2, 'kid', 'kid', '123', 'kid@you.com', '2020-02-03 19:26:58', '::1', 1, 0);
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_avatar`, `user_permissions`, `user_admin`) VALUES
+(3, 'Trevor', 'user1', 'password', 'me@you.com', '2020-03-09 15:48:21', '::1', 'olaf', 5, 1),
+(4, 'Kate', 'user2', 'password', 'me@ou.com', '2020-03-09 15:49:04', 'no', 'null', 5, 1),
+(5, 'Madelaine', 'user3', 'password', 'me@you.com', '2020-03-09 15:49:39', 'no', 'null', 3, 0),
+(6, 'Isabelle', 'user4', 'password', 'me@you.com', '2020-03-09 15:50:13', 'no', 'null', 2, 0),
+(7, 'Serena', 'user5', 'password', 'me@you.com', '2020-03-09 15:50:48', 'no', 'null', 2, 0);
 
 --
 -- Indexes for dumped tables
@@ -538,7 +542,7 @@ ALTER TABLE `tbl_urating`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

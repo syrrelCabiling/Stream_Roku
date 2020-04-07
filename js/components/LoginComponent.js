@@ -75,7 +75,7 @@ export default {
                 .catch((err) => console.log(err));
                 
             }else{
-                console.error("inputs cant be!");
+                console.error("inputs cant be empty!");
             }
         }
     }

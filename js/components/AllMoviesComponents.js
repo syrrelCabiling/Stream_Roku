@@ -1,7 +1,6 @@
-import UserComponent from './UserComponent.js';
-
-
 export default {
+	props: ['movies_display'],
+    name:"AllMovies",
 	template: `
 	<div class="container">
 		<div class="row">
@@ -9,37 +8,35 @@ export default {
 				<h1 class="user-message">{{ message }}</h1>
 			</div>
 		</div>
-
+		<div>{{ movies_display }}</div>
 		<div class="row">
-			<UserComponent v-for="(user, index) in userList" :liveuser="user" :key="index"/>
+			<UserComponent v-for="(movie, index) in movieList" :liveuser="user" :key="index"/>
 		</div>
 	</div>
 	`,
-	
+
+    
 
 	created: function () {
-		this.fetchAllUsers();
+		this.fetchAllMovies();
 	},
 
 	data() {
 		return {
-			message: `Who's Using Roku?`,
+			message: `Back in Time!`,
 
-			userList: []
+			movieList: []
 		}
 	},
 	methods: {
-		fetchAllUsers() {
-			let url = './admin/admin_getUsers.php?allusers=true';
+		fetchAllMovies() {
+			let url = './admin/admin_getMovies.php?allMovies=true';
 			fetch(url)
 			.then(res => res.json())
-			.then(data => this.userList = data)
+			.then(data => this.movieList = data)
 			.catch(error => console.error(error))
 
 		}
 	},
 
-	components: {
-		UserComponent: UserComponent
-	}
 }
