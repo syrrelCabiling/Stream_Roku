@@ -4,10 +4,14 @@ function login($username, $password, $ip){
     $pdo = Database::getInstance()->getConnection();
     //Check existance
     $check_exist_query = 'SELECT COUNT(*) FROM tbl_user WHERE user_name= :username';
+    $check_user_query .= ' AND user_pass = :password';
+    
     $user_set = $pdo->prepare($check_exist_query);
     $user_set->execute(
         array(
             ':username' => $username,
+            ':password'=>$password
+
         )
     );
 
@@ -28,7 +32,7 @@ function login($username, $password, $ip){
             //Logged in!
             $message = 'You just logged in!';
             $_SESSION['user_id'] = $id;
-            $_SESSION['user_name'] = $found_user['user_fname'];
+            $_SESSION['uname'] = $found_user['user_fname'];
 
             //TODO: finish the following lines so that when user logged in
             // The user_ip column get updated by the $ip
@@ -44,11 +48,12 @@ function login($username, $password, $ip){
             $user = array();
 
             $user['id'] = $found_user['user_id'];
-            $user['uname'] = $found_user['user_name'];
-            $user['fname'] = $found_user['user_fname'];
-            $user['admin'] = $found_user['user_admin'];
-            $user['avatar'] = $found_user['user_avatar'];
-            $user['permission'] = $found_user['user_permissions'];
+            $user['user_name'] = $found_user['user_name'];
+            $user['user_password'] = $found_user['user_pass'];
+            $user['user_fname'] = $found_user['user_fname'];
+            $user['user_admin'] = $found_user['user_admin'];
+            $user['user_avatar'] = $found_user['user_avatar'];
+            $user['user_permissions'] = $found_user['user_permissions'];
 
             $message = json_encode($user);
             return $message;

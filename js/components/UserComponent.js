@@ -5,23 +5,23 @@ export default {
     <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
         <div class="card rounded" @click="navToUserHome()">
             <div class="card-body text-center">
-                <img :src="'images/user/' + liveuser.avatar + '.jpg'" class="rounded-circle img-fluid">
-                <p>{{ liveuser.uname }}</p>
+                <img :src="'images/user/' + liveuser.user_avatar + '.jpg'" class="rounded-circle img-fluid">
+                <p>{{ liveuser.user_name }}</p>
             </div>
         </div>
     </div>`,
 
 
 	created: function () {
-		if(this.liveuser.avatar === null || this.liveuser.avatar === "null"){
-			this.liveuser.avatar = "temp_avatar";
+		if(this.liveuser.user_avatar === null || this.liveuser.user_avatar === "null"){
+			this.liveuser.user_avatar = "temp_avatar";
 		}
 	},
 
     methods: {
         navToUserHome(){
-            debugger;
-            
+            //debugger;
+            localStorage.setItem("cachedUser", JSON.stringify(this.liveuser));
             //send this user to its home page, and pass the user object to the home page
             this.$router.push({name: 'home', params: {currentuser: this.liveuser}});
         }

@@ -2,7 +2,7 @@
 
     $db_dsn = array(
         'host' => 'localhost',
-        'dbname' => 'week1_vue',
+        'dbname' => 'db_php_roku',
         'charset' => 'utf8',
     );
     
