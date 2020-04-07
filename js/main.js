@@ -3,6 +3,12 @@ import AllUsersComponent from './components/AllUsersComponent.js';
 import LoginComponent from './components/LoginComponent.js';
 import UserHomeComponent from './components/UserHomeComponent.js';
 
+import UserComponent from "./components/UserComponent.js";
+import DashboardComponent from "./components/DashboardComponent.js";
+import AdultsDashboardComponent from "./components/AdultsDashboardComponent.js";
+import KidsDashboardComponent from "./components/KidsDashboardComponent.js";
+import Navigation from "./components/Navigation.js";
+
 
 (() => {
   let router = new VueRouter({
@@ -12,6 +18,9 @@ import UserHomeComponent from './components/UserHomeComponent.js';
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/users', name: 'users', component: AllUsersComponent },
       { path: '/userhome', name: 'home', component: UserHomeComponent, props: true },
+      { path: '/adults-dashboard', name: "adults-dashboard", component: AdultsDashboardComponent },
+      { path: '/kids-dashboard', name: "kids-dashboard", component: KidsDashboardComponent }
+
 
     ]
   });
