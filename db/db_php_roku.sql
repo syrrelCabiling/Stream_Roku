@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 07, 2020 at 01:48 AM
+-- Generation Time: Apr 07, 2020 at 08:54 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -374,11 +374,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_avatar`, `user_permissions`, `user_admin`) VALUES
-(3, 'Trevor', 'user1', 'password', 'me@you.com', '2020-03-09 15:48:21', '::1', 'olaf', 5, 1),
-(4, 'Kate', 'user2', 'password', 'me@ou.com', '2020-03-09 15:49:04', 'no', 'null', 5, 1),
-(5, 'Madelaine', 'user3', 'password', 'me@you.com', '2020-03-09 15:49:39', 'no', 'null', 3, 0),
-(6, 'Isabelle', 'user4', 'password', 'me@you.com', '2020-03-09 15:50:13', 'no', 'null', 2, 0),
-(7, 'Serena', 'user5', 'password', 'me@you.com', '2020-03-09 15:50:48', 'no', 'null', 2, 0);
+(3, 'mom', 'admin', '123', 'me@you.com', '2020-03-09 15:48:21', '::1', 'olaf', 5, 1),
+(4, 'kid', 'kid', '123', 'me@you.com', '2020-03-09 15:49:04', 'no', 'null', 5, 0);
 
 --
 -- Indexes for dumped tables
@@ -488,13 +485,13 @@ ALTER TABLE `tbl_decade`
 -- AUTO_INCREMENT for table `tbl_genre`
 --
 ALTER TABLE `tbl_genre`
-  MODIFY `genre_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `genre_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_movies`
 --
 ALTER TABLE `tbl_movies`
-  MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_mov_decade`
@@ -506,7 +503,7 @@ ALTER TABLE `tbl_mov_decade`
 -- AUTO_INCREMENT for table `tbl_mov_genre`
 --
 ALTER TABLE `tbl_mov_genre`
-  MODIFY `mov_genre_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `mov_genre_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_shows`
@@ -542,7 +539,7 @@ ALTER TABLE `tbl_urating`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
